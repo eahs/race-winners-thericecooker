@@ -18,15 +18,17 @@ namespace RaceWinners
             {
                 // Combine the ranks to print as a list
                 var ranks = String.Join(", ", data[i].Ranks);
-                
+
                 Console.WriteLine($"{data[i].Name} - [{ranks}]");
             }
 
-            int z = 0;
-            for (int i = 0; i < 7; i++)
+            double[] z = { };
+            for (int i = 0; i < data.Count; i++)
             {
-                double average = data[i].Ranks.Average();
-
+                double k = data[i].Ranks.Take(7).Sum();
+                k /= 7;
+                Console.WriteLine(k);
+                
             }
         }
     }
